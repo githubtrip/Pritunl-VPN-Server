@@ -28,5 +28,5 @@ systemctl enable pritunl mongodb
  IP=$(gcloud compute instances describe $SERVER_NAME --zone us-central1-f | grep natIP | cut -d: -f2 | sed 's/^[ \t]*//;s/[ \t]*$//')		
  gcloud compute firewall-rules create vpn-allow-8787 --allow tcp:8787 --network default --priority 65535 --source-ranges $IP/32		
  gcloud compute firewall-rules create vpn-allow-3838 --allow tcp:3838 --network default --priority 65535 --source-ranges $IP/32		
- gcloud compute firewall-rules create vpn-allow-8787 --allow tcp:8444 --network default --priority 65535 --source-ranges $IP/32			
+ gcloud compute firewall-rules create vpn-allow-8444 --allow tcp:8444 --network default --priority 65535 --source-ranges $IP/32			
  echo "VPN server will be available for setup at https://$IP in a few minutes."
