@@ -1,11 +1,11 @@
-SERVER_NAME="bot-vpn-server"
+SERVER_NAME="vpn-server"
 gcloud compute instances create $SERVER_NAME \
 --machine-type "f1-micro" \
 --image-family ubuntu-1804-lts \
 --image-project "ubuntu-os-cloud" \
 --boot-disk-size "10" \
 --boot-disk-type "pd-standard" \
---boot-disk-device-name "bot-vpn-server" \
+--boot-disk-device-name "vpn-server" \
 --tags https-server,http-server \
 --zone us-central1-f \
 --labels ready=true \
